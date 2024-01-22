@@ -73,4 +73,18 @@
 
         Return CurrentDate
     End Function
+    Friend Shared Function GetTimeOfDay() As String
+        Dim Time As String = ""
+        Dim NewTimeAsString() As String = Split(TimeOfDay.ToString, " ")
+
+        For looper = 0 To NewTimeAsString(1).Length - 1
+            If NewTimeAsString(1)(looper) <> ":" Then
+                Time &= NewTimeAsString(1)(looper)
+            Else
+                Time &= "-"
+            End If
+        Next
+        Time = "Time " & Time
+        Return Time
+    End Function
 End Class

@@ -8,7 +8,7 @@ Public Class AdminForm
     Private FormsOpened As Boolean
     Private IsSearching As Boolean
     Private Data As String
-    Private Path As String = Application.StartupPath & "\Old Data\StudentData " & Utilities.GetCurrentDate & ".txt"
+    Private Path As String = Application.StartupPath & "\Old Data\StudentData " & Utilities.GetCurrentDate & ".csv"
     Private Key As Byte = 128
     Private LoadOld As Boolean
 
@@ -17,6 +17,8 @@ Public Class AdminForm
         FormsOpened = False
         FormSort.SelectedIndex = 0
         StatusSort.SelectedIndex = 0
+        MsgBox(Utilities.GetTimeOfDay)
+
     End Sub
 
     Private Sub LogOutButton_Click(sender As Object, e As EventArgs) Handles LogOutButton.Click
@@ -148,6 +150,8 @@ Public Class AdminForm
     End Sub
 
     Private Sub EncryptData()
+        Dim temp As String = "ID, Name, Surname,Form,CurrentHub,TimeSignedIn"
+        Data &= temp & vbCrLf
         Dim CurrentStudent As String
         Dim EncryptedStudent As String = ""
         For looper = 0 To Students.GetNoOfStudents
