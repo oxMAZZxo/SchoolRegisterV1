@@ -17,7 +17,7 @@ Public Class AdminForm
         FormsOpened = False
         FormSort.SelectedIndex = 0
         StatusSort.SelectedIndex = 0
-        MsgBox(Utilities.GetTimeOfDay)
+        'MsgBox(Utilities.GetTimeOfDay)
 
     End Sub
 
