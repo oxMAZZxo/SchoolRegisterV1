@@ -6,6 +6,7 @@
     Private TimeSignedIn As Date
     Private CurrentHub As String
     Private SignedIn As Boolean
+    'test comment for github
     Friend Sub New()
         Me.SetID(0)
         Me.SetName("")
